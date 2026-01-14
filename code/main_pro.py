@@ -19,8 +19,8 @@ import faiss  # 必须安装: pip install faiss-cpu
 class Config:
     # 示例文件名 (请根据实际下载的文件名修改)
     # 2023版通常后缀是 .jsonl.gz
-    DATA_PATH = 'Health_and_Personal_Care.jsonl.gz'       
-    META_PATH = 'meta_Health_and_Personal_Care.jsonl.gz'    
+    DATA_PATH = 'Digital_Music.jsonl.gz'       
+    META_PATH = 'meta_Digital_Music.jsonl.gz'    
     
     MODEL_NAME = 'sentence-transformers/all-MiniLM-L6-v2'
     
@@ -534,4 +534,5 @@ with torch.no_grad():
     _, I_pers = index.search(pers_emb, 5)
     print("\n[XPERT Retrieval (With Low-Rank Morph)]:")
     for idx in I_pers[0]:
+
         print(f" - {id2item_text[idx][:60]}")
