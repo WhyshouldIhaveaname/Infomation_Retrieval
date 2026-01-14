@@ -1,0 +1,23 @@
+# 深度学习框架 (建议单独安装以匹配 CUDA 版本)
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Hugging Face 生态
+transformers>=4.30.0
+tokenizers>=0.13.0
+
+# 数据处理
+pandas>=1.5.0
+numpy>=1.24.0
+
+# 向量检索 (Windows下推荐使用 CPU 版以避免编译问题，评估阶段够用了)
+faiss-cpu>=1.7.4
+
+# 进度条
+tqdm>=4.65.0
+
+# 其他潜在依赖 (Transformers 可能需要)
+scikit-learn
+scipy
+accelerate
