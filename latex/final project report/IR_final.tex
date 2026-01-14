@@ -178,7 +178,7 @@
 % 摘要 (SIGIR 要求：≤250字)
 % ------------------------------
 \begin{abstract}
-个性化检索是电商推荐系统的核心，需在毫秒级从海量商品库中筛选用户偏好的候选集。现有方法在资源受限环境下（如消费级GPU）面临显存占用高、推理效率低的问题。本文提出Mini\_XPERT，一种基于微软XPERT框架的轻量化方案，核心创新包括：（1）低秩形变算子，将全秩矩阵分解为低秩结构，参数量从$O(d^2)$降至$O(dr)$；（2）通用元数据序列化策略，解决文本语义稀疏问题；（3）LSTM序列适配器，动态捕捉用户兴趣演变。在Amazon Reviews 2023数据集上，Mini\_XPERT的Recall@10达24.5\%，较基线提升13倍，且可在6GB显存GPU上完整部署。本文验证了低资源环境下实现工业级个性化检索的可行性。
+个性化检索是电商推荐系统的核心，需在毫秒级从海量商品库中筛选用户偏好的候选集。现有方法在资源受限环境下（如消费级GPU）面临显存占用高、推理效率低的问题。本文提出Mini\_XPERT，一种基于微软XPERT框架的轻量化方案，核心创新包括：（1）低秩形变算子，将全秩矩阵分解为低秩结构，参数量从$O(d^2)$降至$O(dr)$；（2）通用元数据序列化策略，解决文本语义稀疏问题；（3）LSTM序列适配器，动态捕捉用户兴趣演变。在Amazon Reviews 2023数据集上，Mini\_XPERT的Recall@10达24.5\%，较基线提升13倍，且可在6GB显存GPU上完整部署。本文验证了低资源环境下实现工业级个性化检索的可行性。相关的代码可以在\url{https://github.com/WhyshouldIhaveaname/Infomation_Retrieval/tree/main/code}获取。
 \end{abstract}
 \maketitle
 
@@ -844,5 +844,6 @@ with torch.cuda.amp.autocast(): # FP16 上下文
     
 scaler.scale(loss).backward()
 \end{lstlisting}
+
 
 \end{document}
